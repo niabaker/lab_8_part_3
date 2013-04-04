@@ -4,11 +4,16 @@ void setup() {
 }
 
 int x = 200;
+int mountain_x=100;
+int mountain_v=-1;
 
 void draw() {
   noStroke();
   
   background(180, 200, 240);
+  
+  fill (165,165,165);
+  triangle (mountain_x , 310, mountain_x +300, 310,mountain_x+150 ,150);
 
   // draw the ground
   fill(110, 170, 120);
@@ -30,5 +35,11 @@ void draw() {
   ellipse(x + 20, 320, 20, 20);
   ellipse(x + 60, 320, 20, 20);
 
-  // a comment
+  mountain_x=mountain_x+mountain_v;
+  
+  if(mountain_x <=-300){
+    
+    mountain_x=300;
+    
+  }
 }
